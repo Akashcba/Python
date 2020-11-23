@@ -59,10 +59,56 @@ print(not x and y or x) # True
 In Python " None, 0, 0.0, '', [], {}, set() " represent a False condition.
 ```python
 if not(None or 0 or 0.0 or '' or [] or {} or set()) :
-  print("Entered The Loop")
+            print("Entered The Loop")    #This code is implemented. 
   ```
 ### Strings
-In python strings are immutable objects and cannot be changed after their creation. 
+In python strings are immutable objects and cannot be changed after their creation.
+```python
+# Strings can be created in the following ways;
+string_1 = 'Yes' # Single quotes
+strng_2  = "Yes double" # Double quotes
+string_multi = ''' This is
+                   a multi line string '''
+string_from_int = str(76) # '76' ,str() is a builtin function that converts integer value to a string.
+                          # We may use str() function to make a list of strings from integer values
+                          # and these values can then be sorted lexicographically (i.e based on the first element)
+string = string_1 + string_2  # Concatenation of string objects.
+```
+Python provides us with whitespace characters and the most frequently whitespace characters include newline character ("\n"), space character ("\s) and tab character("\t).
+```python
+# Most Useful String Methods
+string = "              This string contains whitespace    ")
+print(string.strip()) ## Removes the leading and trailing whitespace characters from the string
+                      # "This string contains whitespace"
+
+print("helloWORLD".lower()) # returns the string in lowercase. 
+                            # "helloworld"
+print("lowercase".upper())  # returns the striing in uppercase
+                            # LOWERCASE
+
+print("Google Chrome".startswith("Goo")) # Returns true if the string's prefix matches with the argument of the function.
+                                         # True
+print("Google Chrome".endswith("ome")) # Returns True if the suffix of the string matches with the argument of the function.
+                                       # True
+
+print("coding".find("ing")) # Checks if the string in arguments is present in the main string.It then returns the beginning
+                            # of the matched string. If string is not found it returns a -1
+print("Life is life, live it great".replace("ife","***")) # replaces all instances of the argument in the main string
+                                                          # "L*** is l***,live it great
+print("".join(['c','o','d','e'])) # Joins all the characters of the iterable to return a string
+                                  # "code"
+print(len("Yellow")) # len is a builtin function that returns the length of the string.
+                     # 6
+# To check if a string is present in another string we can use the "in" operator
+print("sim" in "simulation")   # True
+```
+### Container Data Structures
+### List
+List is a container data type that stores a sequence of elements. Unlike strings the lists are mutable and can have repeated elements.
+```python
+# Most Useful list functions
+
+```
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
