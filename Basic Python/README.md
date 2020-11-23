@@ -174,7 +174,7 @@ for key,value in di1.items():
 ### Lambda Functions
 Lambda functions are anonymous functions that are not definedin the namespace (That is they are functions without a name)
 Lambda functions are intended to make code shorter and more concise and easy to read.
-lambda <arguments> : <return expression>
+lambda < arguments > : < return expression >
 ```python
 print(lambda a : a + 3)(5)  # output = 8
 ```
