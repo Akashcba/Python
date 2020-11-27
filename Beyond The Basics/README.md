@@ -48,9 +48,12 @@ It is clear that list comprehensions are a better and more concise way to write 
 Let's see another example of list comprehensions.
 "Given a multiline string we need to create a list of words that have more than 3 characters". This is a major problem in Natural Language Processing where we need to filter out insignificant words( like the, a, an) and create tokens of words in an array.
 ```python
-para = ''' Many of the words used in the phrase are insignificant and hold no meaning.For example – English is a subject. Here, ‘English’ and ‘subject’ are the most significant words and ‘ is ’, ‘ a ’ are almost useless. English subject and subject English holds the same meaning even if we remove the insignificant words – .
+para = ''' Many of the words used in the phrase are insignificant and hold no meaning.
+For example – English is a subject.
+Here, ‘English’ and ‘subject’ are the most significant words and ‘ is ’, ‘ a ’ are almost useless.
+English subject and subject English holds the same meaning even if we remove the insignificant words.
 '''
-word_list = [ [word for word in line.split() if len(word) > 3 ] for line in para.split() ] ### Nested List Comprehension
+word_list = [ [word for word in line.split() if len(word) > 3 ] for line in para.split("\n") ] ### Nested List Comprehension
 print(word_list)
 ### [['Many', 'words', 'used', 'phrase', 'insignificant', 'hold', 'meaning.'],
 ['example', 'English', 'subject.'],
@@ -88,25 +91,24 @@ print( list(mark) )  ## map object can only be printed after conversion to lists
              (True, 'These functions are anonnymous'), 
              (False, "They don't have a name")]
 ```
-
-```bash
-pip install foobar
-```
-
-## Usage
-
+## Slicing in Python
+Slicing is the process of getting a subsequence of python's builtin data structures like lists,tuple,strings.
+   var[start : stop : step]
+#start is the starting index of the subsequence (Inclusive)
+#stop is the ending index of the subsequence (Exclusive)
+#step is the increment/gap python taken when traversing through the datastructure.
 ```python
-import foobar
-
-foobar.pluralize('word') # returns 'words'
-foobar.pluralize('goose') # returns 'geese'
-foobar.singularize('phenomena') # returns 'phenomenon'
+string = "Say Hello"
+string[0:3]         ## "sa"
+string[3:0]         ## "" -> empty string because default value of step = 1
+string[:5]          ## "Say H"
+string[5:]          ## "ello"
+string[:500]        ## "Say Hello"  --> automatically ends the operation at the end of the list
+string[4:8:2]       ## "Hl"
+string[::3]         ## "S l"
+string[::-1]        ## "olleH yaS"    ---> Reverse of string equivalent to calling the reverse() function
 ```
-
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
 Please make sure to update tests as appropriate.
-
-## License
-[MIT](https://choosealicense.com/licenses/mit/)
