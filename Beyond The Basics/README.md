@@ -9,7 +9,8 @@ As disccussed previously Python gives us the ability to quickly create and modif
 The context defines which list element to select and the expression defines how to modify each element before adding the result to the list.
 ```python
 # List Comprehension Examples ;
-ls = [ x*2 for x in range(3) ] ## Here "for x in range(3)" is the context and "x*2" is the expression. The goal f expression is to modify each selected element before adding it to the list.
+ls = [ x*2 for x in range(3) ] ## Here "for x in range(3)" is the context and "x*2" is the expression.
+                               ## The goal of expression is to modify each selected element before adding it to the list.
 ## ls = [0,2,4]
 ls2 = [ x for x in range(5) ] # ls2 = [0,1,2,3,4]
 
@@ -34,17 +35,18 @@ students = {"Rahul" : 78 ,
 ## Using Basic Python:
 marks = []
 for key, val in students.items():
-          if val > 65:
-              marks.append( (key,val) )
+     if val > 65:
+          marks.append( (key,val) )
 print(marks)
 
 ## Uisng List Comprehension
 
-new_marks = [ (k,v) for k,v in students.items() if v > 65 ]
+new_marks = [ (k,v) for k,v in students.items() if v > 65 ]     # Creates a tuple that stores the name and marks together.
 print(new_marks)
 ```
 It is clear that list comprehensions are a better and more concise way to write a program in Python.
-
+Let's see another example of list comprehensions
+## Reading 
 ```bash
 pip install foobar
 ```
