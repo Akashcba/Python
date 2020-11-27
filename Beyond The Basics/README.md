@@ -88,8 +88,8 @@ mark = map(lambda ss: (True, ss) if "function" in ss else (False ,ss) , txt)
 # Creates a map function that contains tuple storing the bool value and the string.
 print( list(mark) )  ## map object can only be printed after conversion to lists.
 ### mark = [ (True, 'We are using a lambda function'),
-             (True, 'These functions are anonnymous'), 
-             (False, "They don't have a name")]
+###          (True, 'These functions are anonnymous'), 
+###          (False, "They don't have a name")]
 ```
 ## Slicing in Python
 Slicing is the process of getting a subsequence of python's builtin data structures like lists,tuple,strings.
