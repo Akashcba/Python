@@ -45,8 +45,50 @@ new_marks = [ (k,v) for k,v in students.items() if v > 65 ]     # Creates a tupl
 print(new_marks)
 ```
 It is clear that list comprehensions are a better and more concise way to write a program in Python.
-Let's see another example of list comprehensions
-## Reading 
+Let's see another example of list comprehensions.
+"Given a multiline string we need to create a list of words that have more than 3 characters". This is a major problem in Natural Language Processing where we need to filter out insignificant words( like the, a, an) and create tokens of words in an array.
+```python
+para = ''' Many of the words used in the phrase are insignificant and hold no meaning.For example – English is a subject. Here, ‘English’ and ‘subject’ are the most significant words and ‘ is ’, ‘ a ’ are almost useless. English subject and subject English holds the same meaning even if we remove the insignificant words – .
+'''
+word_list = [ [word for word in line.split() if len(word) > 3 ] for line in para.split() ] ### Nested List Comprehension
+print(word_list)
+### [['Many', 'words', 'used', 'phrase', 'insignificant', 'hold', 'meaning.'],
+['example', 'English', 'subject.'],
+['Here,', '‘English’', '‘subject’', 'most', 'significant', 'words', 'almost', 'useless.'],
+['English', 'subject', 'subject', 'English', 'holds', 'same', 'meaning', 'even', 'remove', 'insignificant', 'words' ] ]
+```
+## Reading a file in Python
+In Python we can read a compelete file using the open function and store it as a list.
+```python
+list_file = [line.strip() for line in open("C://Mycomputer/readFile.py")]
+```
+## Lambda Functions and Map Function combo
+Map() is a special function that takes a function as an argument and a sequence(or iterator)s. Map function applies that argument function on every element of that sequence.
+Note: Map function returns a map object that can be converted to list.
+```python
+ls = ["1" ,"2" ,"3" ,"4" ,"5" ,"6"]   ## List of numbers stored as string.
+ls = map( int , ls)
+print(ls)     ### ls = [1, 2, 3, 4, 5, 6]  ---> Every object of ls converts to an integer.
+```
+Map function when combined with a Lambda function can prooved to be a very powerful tool.
+```python
+# Examples Of Lambda and Map function usage
+ls = [1,2,3,4,5]
+ls = list(map(lambda x: x**2 ,ls)
+print(ls) ## ls = [ 1, 4, 9, 16, 25 ]
+
+## Check if a word appears in a list of strings.
+txt = [ "We are using a lambda function", 
+        "These functions are anonnymous",
+        "They don't have a name" ]
+mark = map(lambda ss: (True, ss) if "function" in ss else (False ,ss) , txt)
+# Creates a map function that contains tuple storing the bool value and the string.
+print( list(mark) )  ## map object can only be printed after conversion to lists.
+### mark = [ (True, 'We are using a lambda function'),
+             (True, 'These functions are anonnymous'), 
+             (False, "They don't have a name")]
+```
+
 ```bash
 pip install foobar
 ```
