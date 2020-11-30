@@ -5,7 +5,8 @@ In basic python we introduced about list comprehension and lambda functions. Now
 
 ## List Comprehension
 
-As disccussed previously Python gives us the ability to quickly create and modify lists through list comprehensions using the formula: [ expresson + context ] 
+As disccussed previously Python gives us the ability to quickly create and modify lists through list comprehensions using the formula: 
+```[ expresson + context ]``` 
 The context defines which list element to select and the expression defines how to modify each element before adding the result to the list.
 ```python
 # List Comprehension Examples ;
@@ -108,6 +109,26 @@ string[4:8:2]       ## "Hl"
 string[::3]         ## "S l"
 string[::-1]        ## "olleH yaS"    ---> Reverse of string equivalent to calling the reverse() function
 ```
+Let's now look at an example of using lambda functions along with list slicing:
+```python
+### Given a multiline string
+### Find a query in the text and retrun its immediate environment,
+### that is up to 18 positions around the found query.
+data = '''
+There are many intelligent people in the economic field who would tell us that rising of prices is a phenomenon,
+which is characteristic of a developing economy. But inflation can be beneficial only if production and national income of the country also increase.
+But in our country, national income and production do not increase in proportion to the rise in price due to various diverse factors.
+Since independence, India faced such problems that in spite of major steps taken to improve the economy, our economy has not come up to our expectations.
+India was attacked by Pakistan and then China in the earlier years of her freedom. It took years to recover from the heavy losses of the war.
+Then large-scale industries, like Iron and Steel showed losses in earlier stages.
+This also caused hike in price.
+'''
+
+found = lambda x,q: x[x.index(q) - 18 : x.index(q) + 18] if q in x else -1
+print( found(data.strip('\n') , "India")  ##   nce independence, India faced such p
+```
+## List comprehension with slicing
+
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
